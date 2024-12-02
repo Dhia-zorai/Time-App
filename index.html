@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="time">
+        <div class="timecontainer">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        let hrs=document.getElementById("hrs");
+        let min=document.getElementById("min");
+        let sec=document.getElementById("sec");
+
+        setInterval(()=>{
+        
+        let currentTime=new Date();
+        
+        hrs.innerHTML=(currentTime.getHours()<10?"0":"") + currentTime.getHours();
+        min.innerHTML=(currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+        sec.innerHTML=(currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
+    
+        
+    },1000)
+
+       
+    
+    
+    </script>
+    <style>
+        @media (max-width: 768px) {
+        html, body {
+    transform: scale(0.8); 
+    transform-origin: top left; 
+    width: 125%;
+    height: 125%;
+    overflow: hidden; 
+}}
+
+@media (max-width: 480px) {
+        html, body {
+    transform: scale(0.8); 
+    transform-origin: top left; 
+    width: 125%;
+    height: 125%;
+    overflow: hidden; 
+}}
+    </style>
+</body>
+</html>
