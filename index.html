@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="time">
         <div class="timecontainer">
+            <label for="current-time" id="current_time">Current Time</label>
             <div class="clock">
                 <span id="hrs">00</span>
                 <span>:</span>
@@ -41,7 +43,24 @@
     
     
     </script>
-        
+    <style>
+        @media (max-width: 768px) {
+        html, body {
+    transform: scale(0.8); 
+    transform-origin: top left; 
+    width: 125%;
+    height: 125%;
+    overflow: hidden; 
+}}
 
+@media (max-width: 480px) {
+        html, body {
+    transform: scale(0.8); 
+    transform-origin: top left; 
+    width: 125%;
+    height: 125%;
+    overflow: hidden; 
+}}
+    </style>
 </body>
 </html>

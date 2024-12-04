@@ -1,25 +1,32 @@
 /*Time App*/
-       
 
-.time{
+#current_time{
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(0.75rem, 0.563rem + 0.5vw, 0.9rem);
+}
+
+.time {
     width: 100%;
     min-height: 100vh;
-    background:linear-gradient(45deg,#08001f,#30197d);
-    background-attachement:fixed;  
+    background: linear-gradient(45deg, #08001f, #30197d);
     color: #fff;
+    font-family: 'Audiowide',sans-serif;
     position: relative;
 }
 
-.timecontainer{
-    width:800px;
+.timecontainer {
+    width: 800px;
     height: 180px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
     
+    transform: translate(-50%, -50%);
+
 }
-.clock{
+
+.clock {
     width: 100%;
     height: 100%;
     background: rgba(235, 0, 255, 0.11);
@@ -30,9 +37,10 @@
     
     backdrop-filter: blur(50px);
 }
-.timecontainer::before{
+
+.timecontainer::before {
     content: '';
-    width:180px;
+    width: 180px;
     height: 180px;
     background-color: #f41b75;
     border-radius: 10px;
@@ -41,9 +49,10 @@
     top: -50px;
     z-index: -1;
 }
-.timecontainer::after{
+
+.timecontainer::after {
     content: '';
-    width:180px;
+    width: 180px;
     height: 180px;
     background-color: #419aff;
     border-radius: 50%;
@@ -52,27 +61,54 @@
     bottom: -50px;
     z-index: -1;
 }
-.clock span{
-    font-size: 5rem;
+
+.clock span {
+    font-size:clamp(3rem, 10vw, 5rem);
     width: 110px;
     display: inline-block;
     text-align: center;
     position: relative;
 }
 
-.clock span::after{
-    font-size:1rem;
+.clock span::after {
+    font-size: 1rem;
     position: absolute;
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
 }
-#hrs::after{
+
+#hrs::after {
     content: 'Hours';
 }
-#min::after{
+
+#min::after {
     content: 'Minutes';
 }
-#sec::after{
+
+#sec::after {
     content: 'Seconds';
+}
+
+/* tbar9ich clock lel phones*/
+
+@media (max-width: 786px) {
+    .timecontainer {
+        width: 90%;
+        height: auto; 
+    }
+    
+    .clock {
+        padding: 1rem; 
+        width: 100%;  
+    }
+
+    .clock span {
+        font-size: 4rem; 
+    }
+
+    .timecontainer::before, .timecontainer::after {
+        width: 150px;
+        height: 150px;
+    }
 }
